@@ -12,9 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.depresol.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
