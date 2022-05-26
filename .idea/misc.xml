@@ -11,11 +11,16 @@
         <entry key="..\:/Depresol/Depresol/app/src/main/res/drawable/ic_login_hero.xml" value="0.14322916666666666" />
         <entry key="..\:/Depresol/Depresol/app/src/main/res/drawable/ic_mail.xml" value="0.14322916666666666" />
         <entry key="..\:/Depresol/Depresol/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/round_back_light_10.xml" value="0.1985" />
-        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/search_icon.xml" value="0.1985" />
-        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/messages_adapter_layout.xml" value="0.22521367521367522" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/button_circle.xml" value="0.21875" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/button_text_color.xml" value="0.37864583333333335" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/checked_button.xml" value="0.37864583333333335" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/chose_button.xml" value="0.37864583333333335" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/ic_login_hero.xml" value="0.2601851851851852" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/ic_register_hero.xml" value="0.2601851851851852" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/round_back_light_10.xml" value="0.21875" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/drawable/unchecked_button.xml" value="0.37864583333333335" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/layout/activity_login.xml" value="0.19157608695652173" />
+        <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/layout/activity_register.xml" value="0.25" />
       </map>
     </option>
   </component>
