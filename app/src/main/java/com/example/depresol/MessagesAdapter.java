@@ -1,16 +1,24 @@
-package com.example.depresol.messages;
+package com.example.depresol;
 
+import android.app.Activity;
 import android.content.Context;
+import android.text.style.IconMarginSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.depresol.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyViewHolder> {
 
@@ -39,8 +47,19 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyView
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
+        private CircleImageView profilePic;
+        private TextView name;
+        private TextView lastMessage;
+        private TextView unseenMessages;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            profilePic = itemView.findViewById(R.id.profilePic);
+            name = itemView.findViewById(R.id.name);
+            lastMessage = itemView.findViewById(R.id.lastMessage);
+            unseenMessages = itemView.findViewById(R.id.unseenMessages);
+
         }
     }
 }
