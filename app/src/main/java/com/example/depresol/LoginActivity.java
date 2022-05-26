@@ -22,14 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_login);
 
-        kl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(this,RegisterActivity.class));\
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
-            }
-        });
+
     }
     public void onLoginClick(View view){
 //        try{
