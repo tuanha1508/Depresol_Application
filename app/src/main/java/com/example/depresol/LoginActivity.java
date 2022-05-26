@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class LoginActivity extends AppCompatActivity {
-    ImageView kl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     public void onLoginClick(View view){
-//        try{
-//
-//        } catch(Exception ex){
-//            Log.d("Error " , ex.getMessage());
-//        }
-//
-//        try{
-//
-//        } catch (Exception ex){
-//            Log.e("Error ",ex.getMessage());
-//        }
+        startActivity(new Intent(this,RegisterActivity.class));
+        overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
     }
 }
