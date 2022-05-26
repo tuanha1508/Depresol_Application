@@ -28,10 +28,9 @@ android {
 }
 
 dependencies {
-
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:appcompat-v7:+'
-
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.android.support:design:32.0.0'
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
     implementation files('material')
@@ -42,6 +41,11 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.airbnb.android:lottie:3.7.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }
