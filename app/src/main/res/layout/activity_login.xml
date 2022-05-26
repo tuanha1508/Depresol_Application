@@ -51,6 +51,7 @@
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText
+                    android:id="@+id/editEditTextMail"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_email_hint"
                     android:inputType="textEmailAddress"
@@ -63,6 +64,7 @@
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText
+                    android:id="@+id/editTextPassword"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_password_hint"
                     android:inputType="textPassword"
@@ -82,7 +84,7 @@
                 style="@style/loginButton"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
-                android:text="Híu Trapped"
+                android:text="Đăng nhập"
                 app:initialCornerAngle="27dp"
                 app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
@@ -114,7 +116,9 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_side_bg"/>
+
     <ImageView
+        android:id="@+id/move"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -122,5 +126,5 @@
         android:layout_marginRight="11dp"
         android:layout_marginBottom="30dp"
         android:onClick="onLoginClick"
-        android:src="@drawable/ic_add_img"/>
+        android:src="@drawable/ic_add_img" />
 </RelativeLayout>
