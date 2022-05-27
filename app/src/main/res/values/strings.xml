@@ -4,4 +4,6 @@
     <string name="login_password_hint">Password</string>
     <string name="GiaoVien">Giáo viên</string>
     <string name="Hocsinh">Học sinh</string>
+    <string name="minimum_password">Mật khẩu chưa đủ độ dài!</string>
+    <string name="auth_failed">Lỗi gì đó không biết nữa</string>
 </resources>

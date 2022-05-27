@@ -17,12 +17,12 @@ public class MainActivity extends AppCompatActivity{
         super .onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //get intent data from Register.class activity
-        mobile = getIntent().getStringExtra("mobile");
-        email = getIntent().getStringExtra("email");
-        name = getIntent().getStringExtra("name");
-
-        messagesRecyclerView.setHasFixedSize(true);
-        messagesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        //get intent data from Register.class activity
+//        mobile = getIntent().getStringExtra("mobile");
+//        email = getIntent().getStringExtra("email");
+//        name = getIntent().getStringExtra("name");
+//
+//        messagesRecyclerView.setHasFixedSize(true);
+//        messagesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
