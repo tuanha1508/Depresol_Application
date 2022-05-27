@@ -113,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
                 reference = rootNode.getReference("users/"+uid);
                 String tt = "GV";
                 if(role == 1) tt = "GV"; else tt = "HS";
-                Users login_users = new Users(edtMail.getText().toString(),edtPass.getText().toString(),tt);
+                Users login_users = new Users(edtMail.getText().toString(),edtPass.getText().toString(),tt,edtName.getText().toString(),"");
                 login_users.role = tt;
                 reference.setValue(login_users);
             }

@@ -3,7 +3,7 @@ package com.example.depresol;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import com.example.depresol.R
+import com.example.depresol.R;
 
 public class Chat extends AppCompatActivity {
 
