@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "154882446822",
-    "project_id": "depresol",
-    "storage_bucket": "depresol.appspot.com"
+    "project_number": "698481276054",
+    "project_id": "depresol-1fc0c",
+    "storage_bucket": "depresol-1fc0c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:154882446822:android:90e57bcd6730e52fd63227",
-        "android_client_info": {
-          "package_name": "com.android.application"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "154882446822-3vin0cm37vfa8po0omh7ruti948ajq6o.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCqsuhZ-XwPuCHG1BITYSTO7y95Jbu0j2Q"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "154882446822-3vin0cm37vfa8po0omh7ruti948ajq6o.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:154882446822:android:51bc18ac685611bed63227",
+        "mobilesdk_app_id": "1:698481276054:android:d31126b0ad7be7c2c37eb7",
         "android_client_info": {
           "package_name": "com.example.depresol"
         }
       },
       "oauth_client": [
         {
-          "client_id": "154882446822-3vin0cm37vfa8po0omh7ruti948ajq6o.apps.googleusercontent.com",
+          "client_id": "698481276054-lvanlhbus4242jjqool155g35ooutbp9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCqsuhZ-XwPuCHG1BITYSTO7y95Jbu0j2Q"
+          "current_key": "AIzaSyBPt_xZC-SCay1qTos6p1gMaffg-O5DS1k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "154882446822-3vin0cm37vfa8po0omh7ruti948ajq6o.apps.googleusercontent.com",
+              "client_id": "698481276054-lvanlhbus4242jjqool155g35ooutbp9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
