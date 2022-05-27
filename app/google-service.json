@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "678427980410",
+    "project_id": "depresol-285c8",
+    "storage_bucket": "depresol-285c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678427980410:android:48f612b5079ac9818c01c3",
+        "android_client_info": {
+          "package_name": "com.example.depresol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678427980410-hkqfid4ll20ejl925vkt15kmdqrkitoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.depresol",
+            "certificate_hash": "5f8f8586da542ed96b3f8648efc9ab3cdb4a0101"
+          }
+        },
+        {
+          "client_id": "678427980410-1s7tuql7oddgv46m45dcem3j5qhd5q4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+            "current_key": "AIzaSyCL4hb7VV_4miqePlJtPV6MI1sRaYtVhvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678427980410-1s7tuql7oddgv46m45dcem3j5qhd5q4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
