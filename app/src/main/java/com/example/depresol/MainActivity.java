@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity{
 
         messagesRecyclerView.setHasFixedSize(true);
         messagesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        messagesRecyclerView.setAdapter(new MessagesAdapter(messagesLists,MainActivity.this));
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading...");
@@ -77,12 +77,14 @@ public class MainActivity extends AppCompatActivity{
                     if(!getMobile.equals(mobile)) {
                         final String getName = dataSnapshot.child("name").getValue(String.class);
                         final String getProfilePic =  dataSnapshot.child("profile_pic").getValue(String.class);
-
-                        MessagesList messagesList = new MessagesList(getName, getMobile, "", getProfilePic,0);
+                        String lastMessage = "";
+                        int unseenMessages = 0;
+                        MessagesList messagesList = new MessagesList(getName, getMobile, lastMessage, getProfilePic,unseenMessages);
                         messagesLists.add(messagesList);
+
                     }
                 }
-                messagesRecyclerView.setAdapter(new MessagesAdapter(messagesLists,MainActivity.this));
+
             }
 
             @Override
