@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Depresol"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -31,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
