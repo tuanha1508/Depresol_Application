@@ -2,6 +2,7 @@ package com.example.depresol;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try{
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+        }catch (Exception ex){
+            Log.e("error" , ex.toString());
+        }
         recyclerView = findViewById(R.id.chat_recycler);
         editText = findViewById(R.id.edt_msg);
         imageView = findViewById(R.id.send_btn);
@@ -61,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private void getResponse(String message) {
         chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=160167&key=8h8vRUhkZo5zyBrO&uid=[uid]&msg="+message;
+        String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg="+message;
         String BASE_URL = "http://api.brainshop.ai/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

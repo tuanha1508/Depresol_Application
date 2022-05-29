@@ -101,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Log.d("t",task.getException().toString());
                                 } else {
                                     Log.d("Done", "Dang ky thanh cong");
-                                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                     finish();
                                 }
                             }
