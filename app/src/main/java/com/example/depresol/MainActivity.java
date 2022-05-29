@@ -1,14 +1,15 @@
 package com.example.depresol;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -25,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     ArrayList<Chatsmodal> chatsmodalArrayList;
     ChatAdapter chatAdapter;
-    private final String USER_KEY = "user";
-    private final String BOT_KEY = "bot";
+    private  final String USER_KEY = "user";
+    private  final String BOT_KEY = "bot";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,25 +40,28 @@ public class MainActivity extends AppCompatActivity {
         chatsmodalArrayList = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatsmodalArrayList,this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(chatAdapter);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editText.getText().toString().isEmpty()) {
+                if(editText.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity.this,"Please enter your message",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 getResponse(editText.getText().toString());
+                editText.setText("");
             }
         });
+
+
+
     }
 
     private void getResponse(String message) {
         chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg" + message;
+        String url = "http://api.brainshop.ai/get?bid=160167&key=8h8vRUhkZo5zyBrO&uid=[uid]&msg="+message;
         String BASE_URL = "http://api.brainshop.ai/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -66,17 +72,17 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<MsgModal>() {
             @Override
             public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
-                if(response.isSuccessful()) {
+                if(response.isSuccessful()){
                     MsgModal msgModal = response.body();
                     chatsmodalArrayList.add(new Chatsmodal(msgModal.getCnt(),BOT_KEY));
                     chatAdapter.notifyDataSetChanged();
-                    recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
+                    recyclerView.scrollToPosition(chatsmodalArrayList.size()-1);
                 }
             }
 
             @Override
             public void onFailure(Call<MsgModal> call, Throwable t) {
-                chatsmodalArrayList.add(new Chatsmodal("Bot đéo được lập trình cho tình huống này",BOT_KEY));
+                chatsmodalArrayList.add(new Chatsmodal("no response",BOT_KEY));
                 chatAdapter.notifyDataSetChanged();
             }
         });
