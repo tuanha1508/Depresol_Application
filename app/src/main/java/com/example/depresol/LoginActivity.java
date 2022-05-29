@@ -29,7 +29,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    Button login;
+    Button login,tt;
     EditText edtMail , edtPass;
     String emailPattern = "[a-zA-Z0-9._+]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -49,6 +49,15 @@ public class LoginActivity extends AppCompatActivity {
         edtPass =  findViewById(R.id.editTextPassword);
         progressDialog  = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
+        tt = findViewById(R.id.tathua);
+        tt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
