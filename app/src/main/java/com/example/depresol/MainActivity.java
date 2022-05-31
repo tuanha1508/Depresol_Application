@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 getResponse(editText.getText().toString());
+                editText.setText("");
             }
         });
     }
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
         String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg="+message;
+        //String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg" + message;
         String BASE_URL = "http://api.brainshop.ai/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
