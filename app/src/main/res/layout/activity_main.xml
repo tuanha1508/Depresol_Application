@@ -7,53 +7,23 @@
     tools:context=".MainActivity"
     android:background="@color/white">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFBDBD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/icon_user"
             android:layout_width="50dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="190dp"
-            android:src="@drawable/img_bot"
+            android:src="@drawable/img_bot2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
-        <ImageView
-            android:id="@+id/vector_ek1"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="210dp"
-            android:layout_marginTop="65dp"
-            android:contentDescription="vector_ek1"
-            android:src="@drawable/ic_online" />
-        <ImageView
-            android:id="@+id/ic_back"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:contentDescription="vector_ek1"
-            android:src="@drawable/reply_message" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="80dp"
-            android:lineSpacingExtra="-3sp"
-            android:text="Tuan"
-            android:textColor="@color/welcome_back__sarina__color"
-            android:textSize="15sp" />
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler"
@@ -63,7 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
