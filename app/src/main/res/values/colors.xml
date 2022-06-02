@@ -179,4 +179,17 @@
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#11CFC5</color>
 
+    <color name="__bg__home_ek2_color">#FAFAFA</color>
+    <color name="welcome_back__sarina__color">#371B34</color>
+    <color name="ellipse_5_color">#FE8235</color>
+    <color name="rectangle_color">#FDF3E6</color>
+    <color name="_1_on_1_sessions_color">#573926</color>
+    <color name="rectangle_37_color">#EF5DA8</color>
+    <color name="rectangle_ek1_color">#F4F3F1</color>
+    <color name="rectangle_ek111_color">#F4F4F4</color>
+    <color name="rectangle_ek4_color">#53A06E</color>
+    <color name="home">#5B37B7</color>
+    <color name="find">#E6A919</color>
+    <color name="settings">#1194AA</color>
+    <color name="favorites">#C9379D</color>
 </resources>

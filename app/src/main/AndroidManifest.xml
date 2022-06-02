@@ -18,6 +18,11 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity android:name=".MainMenuActivity"
+            android:exported="true"/>
+        <activity
             android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -30,11 +35,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity"
-            android:exported="true"
-            >
-
         </activity>
     </application>
 
