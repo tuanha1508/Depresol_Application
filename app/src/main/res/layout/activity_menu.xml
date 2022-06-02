@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    android:background="@color/login_bk_color">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:background="#00000000">
+
+        <ImageView
+            android:id="@+id/ellipse_2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="2dp"
+            android:contentDescription="ellipse_2"
+            android:src="@drawable/ellipse_2" />
+
+        <ImageView
+            android:id="@+id/vector"
+            android:layout_width="19.2dp"
+            android:layout_height="20.4dp"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="vector"
+            android:src="@drawable/vector" />
+
+        <ImageView
+            android:id="@+id/vector_ek1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="vector_ek1"
+            android:src="@drawable/ellipse_5_shape" />
+
+        <TextView
+            android:id="@+id/_3"
+            android:layout_width="19dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="Epilogue"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/__bg__home_ek2_color"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="235dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="77dp"
+        android:gravity="top"
+        android:lineSpacingExtra="-3sp"
+        android:text="Good Afternoon, Sarina!"
+        android:textColor="@color/welcome_back__sarina__color"
+        android:textSize="26sp" />
+
+    <View
+        android:id="@+id/group_79"
+        android:layout_width="325dp"
+        android:layout_height="151dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="313dp"
+        android:background="#00000000"
+        />
+    <View
+        android:id="@+id/group_80"
+        android:layout_width="325dp"
+        android:layout_height="157dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="490dp"
+        android:background="#00000000"
+        />
+    <View
+        android:id="@+id/group_82"
+        android:layout_width="325dp"
+        android:layout_height="151dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="673dp"
+        android:background="#00000000"
+        />
+
+    <View
+        android:id="@+id/bottom_navi"
+        android:layout_width="375dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="703dp"
+        android:background="#00000000" />
+
+    <View
+        android:id="@+id/group_73"
+        android:layout_width="391.99dp"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="167dp"
+        android:background="#00000000">
+
+
+    </View>
+
+    <View
+        android:id="@+id/ellipse_3"
+        android:layout_width="12dp"
+        android:layout_height="7dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="703dp"
+        android:background="@drawable/ellipse_3" />
+
+
+</RelativeLayout>
