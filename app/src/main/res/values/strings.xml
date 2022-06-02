@@ -6,4 +6,5 @@
     <string name="Hocsinh">Học sinh</string>
     <string name="minimum_password">Mật khẩu chưa đủ độ dài!</string>
     <string name="auth_failed">Lỗi gì đó không biết nữa</string>
+    <string name="felling_today">Hôm nay cậu như thế nào vậy ~.~</string>
 </resources>
