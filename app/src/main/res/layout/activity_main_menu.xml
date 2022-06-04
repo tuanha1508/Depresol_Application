@@ -447,7 +447,9 @@
             android:layout_marginTop="900dp"
             android:background="@color/white"
             app:cnb_menuResource="@drawable/bottom_menu" />
-
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
     </RelativeLayout>
 
 
