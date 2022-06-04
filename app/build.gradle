@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.depresol"
-        minSdk 24
+        minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -55,9 +55,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.squareup.picasso:picasso:2.8'
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
-    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
-
-
 }
