@@ -13,39 +13,49 @@
         <entry key="..\:/Depresol/Depresol/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
         <entry key="..\:/Depresol/Depresol_Application/app/src/main/res/layout/activity_register.xml" value="0.1859375" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/bottom_menu.xml" value="0.1" />
         <entry key="..\:/Depresol_Application/app/src/main/res/drawable/ellipse_5_shape.xml" value="0.1915" />
         <entry key="..\:/Depresol_Application/app/src/main/res/drawable/ic_online.xml" value="0.206" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/rect_ek1_shape.xml" value="0.173" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/rectangle_ek111_shape.xml" value="0.1" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/rectangle_ek1_shape.xml" value="0.1" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/rectangle_ek4_shape.xml" value="0.1" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/drawable/rectangle_shape.xml" value="0.126" />
         <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_login.xml" value="0.3625" />
         <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_main_menu.xml" value="0.25" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_menu.xml" value="0.2" />
-        <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Depresol_Application/app/src/main/res/layout/activity_menu.xml" value="0.264" />
         <entry key="..\:/Depresol_Application/app/src/main/res/layout/bot_reply.xml" value="0.3625" />
         <entry key="..\:/Depresol_Application/app/src/main/res/layout/home.xml" value="0.3625" />
         <entry key="..\:/Depresol_Application/app/src/main/res/layout/user_holder.xml" value="0.3625" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/back_btn.xml" value="0.137" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/back_icon.xml" value="0.171" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/button_background_blue.xml" value="0.171" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/custom_inp.xml" value="0.171" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2015" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/ic_user.xml" value="0.1985" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/icon_play.xml" value="0.1985" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/play_video.xml" value="0.1985" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/reply_round.xml" value="0.1985" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/result_card.xml" value="0.1985" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/round_back_light_10.xml" value="0.1985" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/round_chat.xml" value="0.171" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/search_icon.xml" value="0.1985" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/send.xml" value="0.1985" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/drawable/send_round.xml" value="0.1985" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/font/firasan_medium.xml" value="0.15572916666666667" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_chat.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_chat_adapter.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_main_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_menu.xml" value="0.1265625" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/activity_solution.xml" value="0.25" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/app_bar_main.xml" value="0.152" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/bot_reply.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/fragment_search.xml" value="0.2734375" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/item_paper_card.xml" value="0.2734375" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/item_play_video.xml" value="0.2734375" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/item_playing_video.xml" value="0.2734375" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/item_shop_card.xml" value="0.1265625" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/list_item.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/messages_adapter_layout.xml" value="0.22521367521367522" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/nav_graph.xml" value="0.2734375" />
         <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/layout/user_holder.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/tuand/AndroidStudioProjects/Depresol_Application/app/src/main/res/menu/master_bottom_navigation.xml" value="0.2734375" />
       </map>
     </option>
   </component>

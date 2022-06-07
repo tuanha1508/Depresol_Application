@@ -34,6 +34,7 @@
             android:layout_marginTop="65dp"
             android:contentDescription="vector_ek1"
             android:src="@drawable/ic_online" />
+
         <ImageView
             android:id="@+id/ic_back"
             android:layout_width="40dp"
@@ -42,6 +43,7 @@
             android:layout_marginTop="5dp"
             android:contentDescription="vector_ek1"
             android:src="@drawable/reply_message" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="34dp"

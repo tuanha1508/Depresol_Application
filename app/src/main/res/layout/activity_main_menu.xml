@@ -259,10 +259,10 @@
                 android:layout_width="280dp"
                 android:layout_height="90dp"
                 android:gravity="center"
+                android:paddingLeft="5dp"
                 android:text="Có làm mới có ăn"
-                android:textStyle="bold"
                 android:textSize="30sp"
-                android:paddingLeft="5dp"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -440,6 +440,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="820dp" />
+
         <com.ismaeldivita.chipnavigation.ChipNavigationBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
