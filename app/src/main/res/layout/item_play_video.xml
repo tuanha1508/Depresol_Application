@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+
+    <ImageView
+        android:background="@drawable/play_video"
+
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+
+        android:padding="12dp"
+        android:src="@drawable/icon_play"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/viewParent.headerText"
+            android:fontFamily="@font/firasan_medium"
+            android:textSize="20sp"
+            android:text="Design Basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:fontFamily="@font/firasan_medium"
+            android:textColor="@color/bottomNavigationTextColor"
+            android:text="Learn design basics."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginTop="16dp"
+            android:background="@color/nav_bar_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </LinearLayout>
+</LinearLayout>
