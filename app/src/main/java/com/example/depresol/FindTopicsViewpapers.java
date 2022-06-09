@@ -34,7 +34,12 @@ public class FindTopicsViewpapers extends RecyclerView.Adapter<FindTopicsViewpap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        View view = mInflater.inflate(R.layout.item_pager_card, parent, false);
+//        return new ViewHolder(view);
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+//        View v = inflater.inflate(R.layout.item_shop_card, parent, false);
+//        return new ViewHolder(v);
+
         ItemPaperCardBinding itemPagerCardBinding = ItemPaperCardBinding.inflate(inflater, parent, false);
         return new ViewHolder(itemPagerCardBinding);
     }
@@ -42,6 +47,7 @@ public class FindTopicsViewpapers extends RecyclerView.Adapter<FindTopicsViewpap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.setBind(mFindList.get(position));
+
         holder.binding.cardViewFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,8 +75,11 @@ public class FindTopicsViewpapers extends RecyclerView.Adapter<FindTopicsViewpap
 
             binding.tvTitulo.setText(matchCourse.getName());
             binding.tvCantidadCursos.setText(matchCourse.getNumberOfCourses());
+
             Glide.with(itemView.getContext())
                     .load(matchCourse.getImageResource())
+//                .transform(new CenterCrop(), new RoundedCorners(24))
+//                .transform(new RoundedCorners(40))
                     .transform(new CenterCrop())
                     .into(binding.image);
         }

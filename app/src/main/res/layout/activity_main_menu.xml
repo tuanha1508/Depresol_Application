@@ -50,6 +50,7 @@
                 android:src="@drawable/ellipse_5_shape" />
 
             <TextView
+                android:id="@+id/_3"
                 android:layout_width="19dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_horizontal|center"
@@ -132,7 +133,7 @@
 
 
             <TextView
-
+                android:id="@+id/_1_on_1_sessions"
                 android:layout_width="194dp"
                 android:layout_height="38dp"
                 android:layout_marginTop="0dp"
@@ -323,7 +324,7 @@
 
                         <pl.droidsonroids.gif.GifImageView
                             android:id="@+id/emotion_sad"
-                            android:layout_width="65dp"
+                            android:layout_width="64dp"
                             android:layout_height="80dp"
                             android:src="@drawable/sad"/>
 
@@ -447,9 +448,9 @@
             android:layout_marginTop="900dp"
             android:background="@color/white"
             app:cnb_menuResource="@drawable/bottom_menu" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
     </RelativeLayout>
 
 
