@@ -1,11 +1,20 @@
 package com.example.depresol;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.example.depresol.App;
+import com.example.depresol.R;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class MyFind {
+    private static final String STORAGE = "shop";
+    private SharedPreferences storage;
 
     private MyFind() {
+        storage = App.getInstance().getSharedPreferences(STORAGE, Context.MODE_PRIVATE);
     }
 
     public static MyFind get() {
@@ -24,4 +33,11 @@ public class MyFind {
         );
     }
 
+    public boolean isRated(int itemId) {
+        return storage.getBoolean(String.valueOf(itemId), false);
+    }
+
+    public void setRated(int itemId, boolean isRated) {
+        storage.edit().putBoolean(String.valueOf(itemId), isRated).apply();
+    }
 }

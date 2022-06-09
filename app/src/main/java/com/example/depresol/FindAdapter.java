@@ -1,6 +1,5 @@
 package com.example.depresol;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,13 +29,18 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+//        View v = inflater.inflate(R.layout.item_shop_card, parent, false);
+//        return new ViewHolder(v);
+
         ItemShopCardBinding itemCardBinding = ItemShopCardBinding.inflate(inflater,parent,false);
         return new FindAdapter.ViewHolder(itemCardBinding);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
+
         holder.setBind(mData.get(position));
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,10 +56,24 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+
+//        private ImageView image;
+//        private TextView tv_titulo;
+//        private TextView tv_cantidad_cursos;
+//
+//        public ViewHolder(View itemView) {
+//            super(itemView);
+//            image = itemView.findViewById(R.id.image);
+//            tv_titulo = itemView.findViewById(R.id.tv_titulo);
+//            tv_cantidad_cursos = itemView.findViewById(R.id.tv_cantidad_cursos);
+//        }
+
         ItemShopCardBinding itemCardBinding;
         public ViewHolder(@NonNull ItemShopCardBinding cardBinding) {
             super(cardBinding.getRoot());
             this.itemCardBinding = cardBinding;
+
+            //this.itemRecyclerMealBinding.
         }
 
         void setBind(Find matchCourse){
@@ -65,6 +83,8 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
             Glide.with(itemView.getContext())
                     .load(matchCourse.getImageResource())
+//                .transform(new CenterCrop(), new RoundedCorners(24))
+//                .transform(new RoundedCorners(40))
                     .into(itemCardBinding.image);
         }
     }
