@@ -16,6 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,36 +30,54 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
 public class LoginActivity extends AppCompatActivity {
-    Button login,tt;
+    Button login;
     EditText edtMail , edtPass;
     String emailPattern = "[a-zA-Z0-9._+]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
     FirebaseAuth auth;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    private String filename = "Storage.txt";
+    private String filepath = "Super_mystery_folder";
+    File myInternalFile;
+    boolean is_login = false;
+    String name_user = null , url_avatar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ContextWrapper contextWrapper = new ContextWrapper(
+                getApplicationContext());
+        File directory = contextWrapper.getDir(filepath, Context.MODE_PRIVATE);
+        myInternalFile = new File(directory, filename);
+        check_is_login();
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         setContentView(R.layout.activity_login);
-
+        if(is_login == true){
+            //startActivity(new Intent(this,MainActivity_Menu.class));
+            Intent intent = new Intent(this, MainActivity_Menu.class);
+            intent.putExtra("name_user", name_user);
+            intent.putExtra("url_avatar", url_avatar);
+            startActivity(intent);
+        }
         login =  findViewById(R.id.cirLoginButton);
         edtMail =  findViewById(R.id.editEditTextMail);
         edtPass =  findViewById(R.id.editTextPassword);
         progressDialog  = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
-        tt = findViewById(R.id.tathua);
-        tt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +111,17 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+
+                                    try {
+                                        String data = "1";
+                                        FileOutputStream fos = new FileOutputStream(myInternalFile);
+                                        fos.write(data.getBytes());
+                                        fos.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity_Menu.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -105,5 +135,41 @@ public class LoginActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
     }
 
+    public void check_is_login(){
+        String myData = "";
+        //+ "\n" + "https://i.pinimg.com/736x/18/ab/30/18ab3055867d8215889ff0bb53781ecc.jpg"
+        try {
+            String data = "1";
+            FileOutputStream fos = new FileOutputStream(myInternalFile);
+            fos.write(data.getBytes());
+            data  = "\nHiếu";
+            fos.write(data.getBytes(StandardCharsets.UTF_8));
+            data  = "\nhttps://i.pinimg.com/736x/18/ab/30/18ab3055867d8215889ff0bb53781ecc.jpg";
+            fos.write(data.getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(myInternalFile);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(in));
+            String strLine ;
+            int i = 1;
+            while ((strLine = br.readLine()) != null) {
+                if(i==1) myData = myData + strLine;
+                if(i==2) name_user = strLine;
+                if(i==3) url_avatar = strLine;
+                i++;
+            }
+            int kl = Integer.parseInt(myData);
+            if(kl == 0) is_login = false; else is_login = true;
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

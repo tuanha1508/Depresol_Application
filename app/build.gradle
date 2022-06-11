@@ -29,10 +29,15 @@ android {
     }
     buildFeatures {
         viewBinding true
+        dataBinding = true
+    }
+    dataBinding{
+        enabled = true
     }
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-firestore:24.1.2'
     def navigation_version = "2.4.2"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:appcompat-v7:+'
@@ -75,4 +80,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$navigation_version"
     implementation "androidx.navigation:navigation-ui:$navigation_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'com.google.firebase:firebase-storage'
+
 }
+apply plugin: 'com.google.gms.google-services'
+

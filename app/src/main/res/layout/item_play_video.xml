@@ -7,6 +7,7 @@
     android:orientation="horizontal">
 
     <ImageView
+        android:id="@+id/img_play_video"
         android:background="@drawable/play_video"
 
         android:layout_marginTop="4dp"
@@ -28,6 +29,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/title_information"
             style="@style/viewParent.headerText"
             android:fontFamily="@font/firasan_medium"
             android:textSize="20sp"
@@ -36,6 +38,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/description"
             android:fontFamily="@font/firasan_medium"
             android:textColor="@color/bottomNavigationTextColor"
             android:text="Learn design basics."

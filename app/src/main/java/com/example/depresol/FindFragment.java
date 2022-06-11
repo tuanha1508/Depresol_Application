@@ -2,21 +2,28 @@ package com.example.depresol;
 
 import static java.lang.Math.abs;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+
 import com.example.depresol.databinding.FragmentSearchBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+
 
 
 public class FindFragment extends Fragment
@@ -25,14 +32,20 @@ public class FindFragment extends Fragment
 
     private static final String TAG = "FindFragment";
     FragmentSearchBinding binding;
-    Context mcontext;
 
+    Context mcontext;
     public FindFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //ltn = findViewById(R.id.ll_popular);
+        int[] imageId = {R.drawable.icon_play , R.drawable.icon_play , R.drawable.icon_play, R.drawable.icon_play};
+        String[] title = {"Christopher","Craig","Sergio","Mubariz","Mike","Michael","Toa","Ivana","Alex"};
+        String[] descrip = {"Heye","Supp","Let's Catchup","Dinner tonight?","Gotta go",
+                "i'm in meeting","Gotcha","Let's Go","any Weekend Plans?"};
+
 
     }
 
@@ -47,6 +60,7 @@ public class FindFragment extends Fragment
         List<Find> data = myFind.getData();
         int currentItem = 1;
         setupViewpager(currentItem, data);
+
 
         return view;
     }

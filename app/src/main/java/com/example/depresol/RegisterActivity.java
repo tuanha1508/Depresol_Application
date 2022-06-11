@@ -3,6 +3,8 @@ package com.example.depresol;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +28,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class RegisterActivity extends AppCompatActivity {
     EditText edtName,edtMail,edtPass;
     Button btnLogin;
@@ -34,9 +40,17 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     int role = 1;
+    private String filename = "Storage.txt";
+    private String filepath = "Super_mystery_folder";
+    File myInternalFile;
+    String uid , uid_new;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ContextWrapper contextWrapper = new ContextWrapper(
+                getApplicationContext());
+        File directory = contextWrapper.getDir(filepath, Context.MODE_PRIVATE);
+        myInternalFile = new File(directory, filename);
         setContentView(R.layout.activity_register);
         btnLogin = findViewById(R.id.cirRegisterButton);
         edtName = findViewById(R.id.editTextName);
@@ -85,7 +99,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -100,22 +113,38 @@ public class RegisterActivity extends AppCompatActivity {
                                             Toast.LENGTH_SHORT).show();
                                     Log.d("t",task.getException().toString());
                                 } else {
+
+                                    try {
+                                        String data = "1";
+                                        FileOutputStream fos = new FileOutputStream(myInternalFile);
+                                        fos.write(data.getBytes());
+                                        fos.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    uid = auth.getUid();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    //FirebaseAuth user = FirebaseAuth.getInstance();
+                                    //uid = user.getUid();
+                                    //reference = rootNode.getReference("users/"+"tmp");
+                                    uid_new = uid;
+                                    reference = rootNode.getReference("users/"+uid_new);
+                                    String tt = "GV";
+                                    if(role == 1) tt = "GV"; else tt = "HS";
+                                    Users login_users = new Users(edtMail.getText().toString(),edtPass.getText().toString(),tt,edtName.getText().toString(),"");
+                                    login_users.role = tt;
+                                    reference.setValue(login_users);
                                     Log.d("Done", "Dang ky thanh cong");
-                                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
+                                    Intent intent = new Intent(RegisterActivity.this , MainActivity_Menu.class);
+                                    intent.putExtra("name_user", edtName.getText().toString());
+                                    intent.putExtra("url_avatar", "");
+                                    startActivity(intent);
                                     finish();
                                 }
                             }
                         });
-
-                rootNode = FirebaseDatabase.getInstance();
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                String uid = user.getUid();
-                reference = rootNode.getReference("users/"+uid);
-                String tt = "GV";
-                if(role == 1) tt = "GV"; else tt = "HS";
-                Users login_users = new Users(edtMail.getText().toString(),edtPass.getText().toString(),tt,edtName.getText().toString(),"");
-                login_users.role = tt;
-                reference.setValue(login_users);
             }
         });
     }

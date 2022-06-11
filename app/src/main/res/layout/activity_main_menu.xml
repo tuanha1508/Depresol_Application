@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainMenuActivity"
     android:background="@color/login_bk_color"
-    android:paddingLeft="10dp">
+    android:paddingLeft="10dp"
+    android:keepScreenOn="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:background="#00000000">
 
             <ImageView
-                android:id="@+id/ellipse_2"
+                android:id="@+id/avatar_main_menu"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="0dp"
@@ -64,6 +65,7 @@
 
 
         <TextView
+            android:id="@+id/loi_chao"
             android:layout_width="235dp"
             android:layout_height="64dp"
             android:layout_alignParentLeft="true"
@@ -191,6 +193,7 @@
                 android:layout_width="155dp"
                 android:layout_height="70dp"
                 android:gravity="center">
+
                 <ImageView
                     android:layout_width="16.13dp"
                     android:layout_height="19.67dp"
@@ -255,12 +258,13 @@
                 android:src="@drawable/vector_ek9" />
 
             <TextView
+                android:id="@+id/phat_ngon"
                 android:layout_width="280dp"
                 android:layout_height="90dp"
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:text="Có làm mới có ăn"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
