@@ -175,9 +175,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="11dp"
         android:layout_marginTop="600dp"
+        android:layout_marginRight="11dp"
         android:adjustViewBounds="false"
         android:onClick="onLoginClick"
-        android:src="@drawable/ic_back_img"/>
+        android:src="@drawable/ic_back_img" />
 </RelativeLayout>
