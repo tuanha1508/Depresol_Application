@@ -40,7 +40,6 @@ public class FindFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //ltn = findViewById(R.id.ll_popular);
         int[] imageId = {R.drawable.icon_play , R.drawable.icon_play , R.drawable.icon_play, R.drawable.icon_play};
         String[] title = {"Christopher","Craig","Sergio","Mubariz","Mike","Michael","Toa","Ivana","Alex"};
         String[] descrip = {"Heye","Supp","Let's Catchup","Dinner tonight?","Gotta go",

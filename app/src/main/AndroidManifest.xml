@@ -24,6 +24,9 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity_Youtube"
+            android:exported="true" />
+        <activity
             android:name=".Forget_password_Activity"
             android:exported="true" />
         <activity

@@ -40,6 +40,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.1.2'
     def navigation_version = "2.4.2"
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation files('libs/YoutubeAndroidPlayerApi.jar')
     implementation 'com.android.support:appcompat-v7:+'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.android.support:design:32.0.0'
@@ -82,7 +83,6 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'com.google.firebase:firebase-storage'
-
 }
 apply plugin: 'com.google.gms.google-services'
 
