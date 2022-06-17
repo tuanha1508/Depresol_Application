@@ -2,6 +2,7 @@ package com.example.depresol;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -59,6 +60,7 @@ public class MainActivity_Menu extends AppCompatActivity
     int time_now;
     ImageView avatar;
     ArrayList<String> cau_noi_of_day = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,7 +104,6 @@ public class MainActivity_Menu extends AppCompatActivity
         if(url_avatar != null ){
             Picasso.get().load(url_avatar).into(avatar);
         }
-        get_cau_noi();
     }
 
     private void setupNavigation() {

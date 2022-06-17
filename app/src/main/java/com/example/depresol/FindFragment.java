@@ -11,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import com.bumptech.glide.Glide;
 import com.example.depresol.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
@@ -32,9 +34,10 @@ public class FindFragment extends Fragment
 
     private static final String TAG = "FindFragment";
     FragmentSearchBinding binding;
-
     Context mcontext;
+    int cnt = 0;
     public FindFragment() {
+
     }
 
     @Override
@@ -44,7 +47,6 @@ public class FindFragment extends Fragment
         String[] title = {"Christopher","Craig","Sergio","Mubariz","Mike","Michael","Toa","Ivana","Alex"};
         String[] descrip = {"Heye","Supp","Let's Catchup","Dinner tonight?","Gotta go",
                 "i'm in meeting","Gotcha","Let's Go","any Weekend Plans?"};
-
 
     }
 
@@ -60,7 +62,8 @@ public class FindFragment extends Fragment
         int currentItem = 1;
         setupViewpager(currentItem, data);
 
-
+        cnt++;
+        update();
         return view;
     }
 
@@ -97,5 +100,22 @@ public class FindFragment extends Fragment
     public void onScrollPagerItemClick(Find courseCard, ImageView imageView) {
         MyUtilsApp.showLog(TAG, "LogD onScrollPagerItemClick : " + courseCard.toString());
         MyUtilsApp.showToast(mcontext, courseCard.getName());
+    }
+
+    public void update(){
+        //binding.tvFindTitle.setText(String.valueOf(cnt));
+//        View viewToLoad = LayoutInflater.from(this.).inflate(R.layout.item_play_video, null,false);
+        View v = getLayoutInflater().inflate(R.layout.item_play_video, null);
+        binding.llPopular.addView(v);
+        View txt;
+        txt = binding.llPopular.getChildAt(1);
+        ImageView img;
+        img = txt.findViewById(R.id.img_play_video);
+        String ID = "kfw7MYah2n0";
+        String url = "https://img.youtube.com/vi/"+ID+"/0.jpg";
+        Glide.with(this).load(url).into(img);
+//        TextView linh ;
+//        linh = txt.findViewById(R.id.title_information);
+//        linh.setText("Khánh Linh cute");
     }
 }

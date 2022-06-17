@@ -105,7 +105,7 @@
                         android:text=". ." />
                 </RelativeLayout>
 
-                <include layout="@layout/item_playing_video" />
+                <include layout="@layout/item_play_video" />
 
                 <include layout="@layout/item_play_video" />
 
