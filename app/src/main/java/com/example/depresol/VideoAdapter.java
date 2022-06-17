@@ -13,7 +13,7 @@ import java.util.List;
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
     List<YoutubeVideos> youtubeVideosList;
-
+    int cnt = 0;
     public VideoAdapter() {
 
     }
@@ -44,11 +44,16 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             super(itemView);
 
             videoWeb = (WebView) itemView.findViewById(R.id.videoWebView);
-
             videoWeb.getSettings().setJavaScriptEnabled(true);
+            cnt = cnt + 1;
             videoWeb.setWebChromeClient(new WebChromeClient() {
-
             });
+            //VideoAdapte.this.super.onDestroyView();
+            //VideoAdapter.super.onDestroyView();
+            videoWeb.destroy();
         }
+
     }
+
+
 }
