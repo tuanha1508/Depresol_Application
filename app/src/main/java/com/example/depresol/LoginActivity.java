@@ -138,18 +138,18 @@ public class LoginActivity extends AppCompatActivity {
     public void check_is_login(){
         String myData = "";
         //+ "\n" + "https://i.pinimg.com/736x/18/ab/30/18ab3055867d8215889ff0bb53781ecc.jpg"
-        try {
-            String data = "1";
-            FileOutputStream fos = new FileOutputStream(myInternalFile);
-            fos.write(data.getBytes());
-            data  = "\nHiếu";
-            fos.write(data.getBytes(StandardCharsets.UTF_8));
-            data  = "\nhttps://i.pinimg.com/736x/18/ab/30/18ab3055867d8215889ff0bb53781ecc.jpg";
-            fos.write(data.getBytes(StandardCharsets.UTF_8));
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            String data = "1";
+//            FileOutputStream fos = new FileOutputStream(myInternalFile);
+//            fos.write(data.getBytes());
+//            data  = "\nHiếu";
+//            fos.write(data.getBytes(StandardCharsets.UTF_8));
+//            data  = "\nhttps://i.pinimg.com/736x/18/ab/30/18ab3055867d8215889ff0bb53781ecc.jpg";
+//            fos.write(data.getBytes(StandardCharsets.UTF_8));
+//            fos.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         try {
             FileInputStream fis = new FileInputStream(myInternalFile);

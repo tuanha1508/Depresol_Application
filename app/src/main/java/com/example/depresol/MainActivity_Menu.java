@@ -31,6 +31,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -104,6 +105,7 @@ public class MainActivity_Menu extends AppCompatActivity
         if(url_avatar != null ){
             Picasso.get().load(url_avatar).into(avatar);
         }
+        get_cau_noi();
     }
 
     private void setupNavigation() {
@@ -115,53 +117,21 @@ public class MainActivity_Menu extends AppCompatActivity
             NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         }
     }
-    void xuli(String s){
-        boolean ok = false;
-        String tmp = "";
-        for(int i = 0; i < s.length();i++){
-            tmp = "";
-            while ( s.charAt(i) != '=' && i+1<s.length() ){
-                i++;
-                ok = true;
-            }
-            i++;
-            if(i>=s.length()) return;
-            if(ok){
-                while(  ( (s.charAt(i) < '0' && s.charAt(i) < '9') || (s.charAt(i) > '0' && s.charAt(i) > '9') ) && i +1 < s.length()){
-                    tmp = tmp + s.charAt(i);
-                    i++;
-                }
-                cau_noi_of_day.add(tmp);
-                tmp ="";
-                i--;
-            }
-            ok = false;
-        }
-    }
     public void get_cau_noi(){
-        DocumentReference docRef = db.collection("Cau_noi").document("Cau_noi_cua_ngay");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        //phat_ngon.setText(document.getData().toString());
-                        xuli(document.getData().toString());
-                        Log.d("D2 " , document.getData().toString());
-                        for(String i:cau_noi_of_day){
-                            Log.d("DD " , i);
+        db.collection("Cau_noi")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("AAAA", document.getId() + " => " + document.getString("name"));
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
                         }
-                        phat_ngon.setText(cau_noi_of_day.get(0));
-                    } else {
-                        Log.d(TAG, "No such document");
                     }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-
+                });
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

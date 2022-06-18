@@ -1,10 +1,13 @@
 package com.example.depresol;
 
+import static android.content.ContentValues.TAG;
 import static java.lang.Math.abs;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,14 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.depresol.databinding.FragmentSearchBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +52,8 @@ public class FindFragment extends Fragment
 
     private static final String TAG = "FindFragment";
     FragmentSearchBinding binding;
+    FirebaseFirestore db;
     Context mcontext;
-    int cnt = 0;
     public FindFragment() {
 
     }
@@ -62,13 +73,13 @@ public class FindFragment extends Fragment
         binding = FragmentSearchBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         mcontext = this.getContext();
-
+        db = FirebaseFirestore.getInstance(); // firebase
         MyFind myFind = MyFind.get();
         List<Find> data = myFind.getData();
         int currentItem = 1;
         setupViewpager(currentItem, data);
 
-        cnt++;
+
         update();
         return view;
     }
@@ -107,27 +118,34 @@ public class FindFragment extends Fragment
         MyUtilsApp.showLog(TAG, "LogD onScrollPagerItemClick : " + courseCard.toString());
         MyUtilsApp.showToast(mcontext, courseCard.getName());
     }
+//    public  void readDocument(){
+//        FirebaseFirestore.getInstance()
+//                .collection()
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//
+//                    }
+//                });
+//    }
+    public void add_item(String title , String description , String url , int index){
+        String link = "https://img.youtube.com/vi/"+url+"/0.jpg";
 
-    public void update(){
-        //binding.tvFindTitle.setText(String.valueOf(cnt));
-//        View viewToLoad = LayoutInflater.from(this.).inflate(R.layout.item_play_video, null,false);
-        //readDocument();
         View v = getLayoutInflater().inflate(R.layout.item_play_video, null);
         binding.llPopular.addView(v);
-        View txt;
-        txt = binding.llPopular.getChildAt(1);
-        ImageView img;
-        img = txt.findViewById(R.id.img_play_video);
-        String ID = "kfw7MYah2n0";
-        String url = "https://img.youtube.com/vi/"+ID+"/0.jpg";
-        Glide.with(this).load(url).override(150,150).optionalCircleCrop().into(img);
-//        Animation a = new RotateAnimation(0.0f, 360.0f,
-//                Animation.RELATIVE_TO_SELF, 1.1f, Animation.RELATIVE_TO_SELF,
-//                0.5f);
-//        a.setRepeatCount(Animation.INFINITE);
-//        a.setFillAfter(true);
-//        a.setDuration(2500);
-//        img.setAnimation(a);
+        View item_view = binding.llPopular.getChildAt(index);
+        ImageView img = item_view.findViewById(R.id.img_play_video);
+        TextView txt_tile = item_view.findViewById(R.id.title_information);
+        TextView txt_description = item_view.findViewById(R.id.description);
+
+        Glide.with(this).load(link).override(150,150).optionalCircleCrop().into(img);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -137,11 +155,54 @@ public class FindFragment extends Fragment
 
         img.animate().rotationBy(360).withEndAction(runnable).setDuration(3000).setInterpolator(new LinearInterpolator()).start();
 
+        txt_tile.setText(title);
+        txt_description.setText(description);
+    }
+    public void update(){
+        //binding.tvFindTitle.setText(String.valueOf(cnt));
+//        View viewToLoad = LayoutInflater.from(this.).inflate(R.layout.item_play_video, null,false);
+        //readDocument();
+//
+//        View txt;
+//        txt = binding.llPopular.getChildAt(1);
+//        ImageView img;
+//        img = txt.findViewById(R.id.img_play_video);
+//        String ID = "kfw7MYah2n0";
+//        String url = "https://img.youtube.com/vi/"+ID+"/0.jpg";
+//        Glide.with(this).load(url).override(150,150).optionalCircleCrop().into(img);
+////        Animation a = new RotateAnimation(0.0f, 360.0f,
+////                Animation.RELATIVE_TO_SELF, 1.1f, Animation.RELATIVE_TO_SELF,
+////                0.5f);
+////        a.setRepeatCount(Animation.INFINITE);
+////        a.setFillAfter(true);
+////        a.setDuration(2500);
+////        img.setAnimation(a);
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                img.animate().rotationBy(360).withEndAction(this).setDuration(3000).setInterpolator(new LinearInterpolator()).start();
+//            }
+//        };
+//
+//        img.animate().rotationBy(360).withEndAction(runnable).setDuration(3000).setInterpolator(new LinearInterpolator()).start();
 
-//        TextView linh ;
-//        linh = txt.findViewById(R.id.title_information);
-//        linh.setText("Khánh Linh cute");
-
+        db.collection("Video")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int index = 1;
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("AAAA", document.getId() + " => " + document.getString("name"));
+                                add_item(document.getString("title") , document.getString("description") , document.getString("url") , index);
+                                index = index + 1;
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 
     }
 }

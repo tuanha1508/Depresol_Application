@@ -225,4 +225,9 @@
     <color name="find">#E6A919</color>
     <color name="settings">#1194AA</color>
     <color name="favorites">#C9379D</color>
+
+
+    <!--colors for light mode-->
+    <color name="imageBorderColor">#E01E7A</color>
+    <color name="miniTitle">#2A2E43</color>
 </resources>
