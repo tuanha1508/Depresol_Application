@@ -28,6 +28,9 @@
             android:name=".Activity_settings"
             android:exported="true" />
         <activity
+            android:name=".MainActivity_Nofications"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity_Teacher"
             android:exported="true" />
         <activity

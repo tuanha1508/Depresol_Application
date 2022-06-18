@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         app:cnb_iconColor="@color/settings" />
+    <item
+        android:id="@+id/yourbotFragment"
+        android:icon="@drawable/ic_bot"
+        android:title="Your Bot"
+        app:cnb_iconColor="@color/find"/>
 </menu>

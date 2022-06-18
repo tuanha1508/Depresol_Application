@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_Nofications">
+
+    <RelativeLayout
+        android:id="@+id/nofication_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/firasans_bold"
+            android:text="Notifications"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/firasans_medium"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/back_icon" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/mark_read"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="30dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/round_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/firasans_medium"
+            android:text="Hieu Luong just do something..."
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/group"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/round_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="113dp"
+            android:fontFamily="@font/firasans_medium"
+            android:text="Hieu Luong just do something..."
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/group"
+            android:layout_marginTop="113dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            android:src="@drawable/round_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="193dp"
+            android:fontFamily="@font/firasans_medium"
+            android:text="Hieu Luong just do something..."
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/group"
+            android:layout_marginTop="193dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mail_nofication"
+            android:layout_marginTop="300dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

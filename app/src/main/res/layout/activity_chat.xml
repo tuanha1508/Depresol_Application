@@ -46,12 +46,12 @@
             android:src="@drawable/reply_message" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
+            android:layout_width="218dp"
+            android:layout_height="37dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginLeft="193dp"
+            android:layout_marginTop="77dp"
             android:lineSpacingExtra="-3sp"
             android:text="Tuan"
             android:textColor="@color/welcome_back__sarina__color"

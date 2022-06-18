@@ -17,4 +17,10 @@
         android:label="findFragment"
         tools:layout="@layout/fragment_search"
         />
+    <fragment
+        android:id="@+id/yourbotFragment"
+        android:name="com.example.depresol.MainActivity"
+        android:label="yourbotFragment"
+        tools:layout="@layout/activity_chat"
+        />
 </navigation>
