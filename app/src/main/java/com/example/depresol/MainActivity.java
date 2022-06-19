@@ -1,12 +1,15 @@
 package com.example.depresol;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,7 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
 
     RecyclerView recyclerView;
     EditText editText;
@@ -28,28 +31,26 @@ public class MainActivity extends AppCompatActivity {
     ChatAdapter chatAdapter;
     private final String USER_KEY = "user";
     private final String BOT_KEY = "bot";
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    protected void onCreate(LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState) {
         try{
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_chat);
         }catch (Exception ex){
             Log.e("error" , ex.toString());
         }
-        recyclerView = findViewById(R.id.chat_recycler);
-        editText = findViewById(R.id.edt_msg);
-        imageView = findViewById(R.id.send_btn);
+        View view = inflater.inflate(R.layout.activity_chat , container , false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.chat_recycler);
+        editText = (EditText) view.findViewById(R.id.edt_msg);
+        imageView = (ImageView) view.findViewById(R.id.send_btn);
         chatsmodalArrayList = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatsmodalArrayList,this);
-        LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(chatAdapter);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(editText.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this,"Please enter your message",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(),"Please enter your message",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 getResponse(editText.getText().toString());

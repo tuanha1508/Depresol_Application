@@ -45,9 +45,6 @@
             android:exported="true"
             android:screenOrientation="fullSensor" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainMenuActivity"
             android:exported="true" />
         <activity

@@ -16,7 +16,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
     ArrayList<Chatsmodal> chatsmodalArrayList;
     Context context;
 
-    public ChatAdapter(ArrayList<Chatsmodal> chatsmodalArrayList, Context context) {
+    public ChatAdapter(ArrayList<Chatsmodal> chatsmodalArrayList, MainActivity context) {
         this.chatsmodalArrayList = chatsmodalArrayList;
         this.context = context;
     }
