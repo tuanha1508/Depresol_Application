@@ -31,8 +31,7 @@ public class MainActivity extends Fragment {
     ChatAdapter chatAdapter;
     private final String USER_KEY = "user";
     private final String BOT_KEY = "bot";
-
-    protected void onCreate(LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState) {
         try{
             super.onCreate(savedInstanceState);
         }catch (Exception ex){
@@ -43,8 +42,10 @@ public class MainActivity extends Fragment {
         editText = (EditText) view.findViewById(R.id.edt_msg);
         imageView = (ImageView) view.findViewById(R.id.send_btn);
         chatsmodalArrayList = new ArrayList<>();
-        chatAdapter = new ChatAdapter(chatsmodalArrayList,this);
+        chatAdapter = new ChatAdapter(chatsmodalArrayList,getActivity());
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(chatAdapter);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +58,8 @@ public class MainActivity extends Fragment {
                 editText.setText("");
             }
         });
+        return view;
     }
-
     private void getResponse(String message) {
         chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
