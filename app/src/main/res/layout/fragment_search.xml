@@ -105,7 +105,6 @@
                         android:text=". ." />
                 </RelativeLayout>
 
-                <include layout="@layout/item_play_video" ></include>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

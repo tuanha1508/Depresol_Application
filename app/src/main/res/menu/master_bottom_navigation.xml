@@ -10,10 +10,7 @@
         android:id="@+id/findFragment"
         android:icon="@drawable/ic_find"
         android:title="Activity"
-        app:cnb_iconColor="@color/find">
-
-
-    </item>
+        app:cnb_iconColor="@color/find"/>
 
     <item
         android:id="@+id/favorites"

@@ -25,9 +25,6 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Activity_settings"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity_Nofications"
             android:exported="true" />
         <activity

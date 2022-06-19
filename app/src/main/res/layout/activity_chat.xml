@@ -22,7 +22,7 @@
             android:id="@+id/icon_user"
             android:layout_width="50dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="190dp"
+            android:layout_marginStart="190dp"
             android:src="@drawable/img_bot"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:id="@+id/vector_ek1"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:layout_marginLeft="210dp"
+            android:layout_marginStart="210dp"
             android:layout_marginTop="65dp"
             android:contentDescription="vector_ek1"
             android:src="@drawable/ic_online" />
@@ -40,17 +40,17 @@
             android:id="@+id/ic_back"
             android:layout_width="40dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:contentDescription="vector_ek1"
-            android:src="@drawable/reply_message" />
+            android:src="@drawable/pink_back" />
 
         <TextView
             android:layout_width="218dp"
             android:layout_height="37dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="200dp"
+            android:layout_marginStart="200dp"
             android:layout_marginTop="77dp"
             android:lineSpacingExtra="-3sp"
             android:text="Tuan"
@@ -107,6 +107,8 @@
 
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
