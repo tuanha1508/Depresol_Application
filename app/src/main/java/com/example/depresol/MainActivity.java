@@ -51,7 +51,7 @@ public class MainActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 if(editText.getText().toString().isEmpty()) {
-                    Toast.makeText(getActivity().getApplicationContext(),"Please enter your message",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Please enter your message",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 getResponse(editText.getText().toString());
