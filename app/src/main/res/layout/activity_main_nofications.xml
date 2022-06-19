@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_Nofications">
+    tools:context=".MainActivity_Nofications"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/nofication_layout"
@@ -48,6 +49,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/screen_nofications"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,9 +76,9 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/group"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="33dp"
-            android:layout_marginLeft="60dp"/>
+            android:src="@drawable/group" />
 
         <ImageView
             android:layout_width="350dp"
@@ -102,36 +104,13 @@
             android:layout_marginTop="113dp"
             android:layout_marginLeft="60dp"/>
 
+
         <ImageView
-            android:layout_width="350dp"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="180dp"
-            android:src="@drawable/round_item" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="193dp"
-            android:fontFamily="@font/firasans_medium"
-            android:text="Hieu Luong just do something..."
-            android:textColor="@color/black"
-            android:textSize="17dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/group"
-            android:layout_marginTop="193dp"
-            android:layout_marginLeft="60dp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/mail_nofication"
             android:layout_marginTop="300dp"
-            android:layout_centerHorizontal="true"/>
+            android:src="@drawable/mail_nofication" />
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

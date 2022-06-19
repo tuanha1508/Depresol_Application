@@ -28,6 +28,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     File myInternalFile;
     boolean is_login = false;
     String name_user = null , url_avatar = null;
+    TextView txt_forget_pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         edtMail =  findViewById(R.id.editEditTextMail);
         edtPass =  findViewById(R.id.editTextPassword);
         progressDialog  = new ProgressDialog(this);
+        txt_forget_pass = findViewById(R.id.forget_pass);
         auth = FirebaseAuth.getInstance();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +130,15 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+
+        txt_forget_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Forget_password_Activity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
