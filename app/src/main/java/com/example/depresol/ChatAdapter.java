@@ -1,6 +1,5 @@
 package com.example.depresol;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 public class ChatAdapter extends RecyclerView.Adapter {
 
     ArrayList<Chatsmodal> chatsmodalArrayList;
-    Context context;
+    MainActivity context;
 
     public ChatAdapter(ArrayList<Chatsmodal> chatsmodalArrayList, MainActivity context) {
         this.chatsmodalArrayList = chatsmodalArrayList;
