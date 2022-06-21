@@ -62,7 +62,6 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
         void setBind(Find matchCourse){
 
             itemCardBinding.tvTitulo.setText(matchCourse.getName());
-            itemCardBinding.tvCantidadCursos.setText(matchCourse.getNumberOfCourses());
 
             Glide.with(itemView.getContext())
                     .load(matchCourse.getImageResource())
