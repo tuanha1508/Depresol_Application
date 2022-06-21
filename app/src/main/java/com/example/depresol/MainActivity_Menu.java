@@ -2,31 +2,46 @@ package com.example.depresol;
 
 import static android.content.ContentValues.TAG;
 
-import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.LongDef;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.depresol.databinding.ActivityMainMenuBarBinding;
+import com.example.depresol.BottomNavigationBehavior;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.EventListener;
+import java.util.List;
 
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -38,26 +53,20 @@ public class MainActivity_Menu extends AppCompatActivity
 
     ActivityMainMenuBarBinding binding;
     FirebaseFirestore db;
-    private static final ArrayList<String> mArrayList = new ArrayList<>();
+    private static ArrayList<String> mArrayList = new ArrayList<>();;
     NavHostFragment navHostFragment;
+    private BottomNavigationView bottomNavigationView;
     String name_user , url_avatar;
     TextView loi_chao , phat_ngon;
     int time_now;
     ImageView avatar;
     ArrayList<String> cau_noi_of_day = new ArrayList<>();
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainMenuBarBinding.inflate(getLayoutInflater());
-        this.getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         View view = binding.getRoot();
         setContentView(view);
 
@@ -103,7 +112,7 @@ public class MainActivity_Menu extends AppCompatActivity
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) binding.appBarMain.bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehavior());
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         if (navHostFragment != null) {
             NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         }
@@ -111,13 +120,16 @@ public class MainActivity_Menu extends AppCompatActivity
     public void get_cau_noi(){
         db.collection("Cau_noi")
                 .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Log.d("AAAA", document.getId() + " => " + document.getString("name"));
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("AAAA", document.getId() + " => " + document.getString("name"));
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
                         }
-                    } else {
-                        Log.d(TAG, "Error getting documents: ", task.getException());
                     }
                 });
     }

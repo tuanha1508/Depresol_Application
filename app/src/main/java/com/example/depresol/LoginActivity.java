@@ -163,6 +163,7 @@ public class LoginActivity extends AppCompatActivity {
 //            e.printStackTrace();
 //        }
 
+
         try {
             FileInputStream fis = new FileInputStream(myInternalFile);
             DataInputStream in = new DataInputStream(fis);

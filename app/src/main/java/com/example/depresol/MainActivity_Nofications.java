@@ -18,6 +18,6 @@ public class MainActivity_Nofications extends AppCompatActivity {
         View v = getLayoutInflater().inflate(R.layout.item_nofications, null);
         kl.addView(v);
         View v2 = getLayoutInflater().inflate(R.layout.item_nofications, null);
-        kl.addView(v2);
+        //kl.addView(v2);
     }
 }

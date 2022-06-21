@@ -74,7 +74,7 @@
             android:layout_marginTop="77dp"
             android:gravity="top"
             android:lineSpacingExtra="-3sp"
-            android:text="Good Afternoon, Sarina!"
+            android:text="Chào buổi sáng nha\n Minh Hiếu"
             android:textColor="@color/welcome_back__sarina__color"
             android:textSize="26sp" />
 
@@ -135,11 +135,11 @@
 
             <TextView
 
-                android:layout_width="194dp"
-                android:layout_height="38dp"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="120dp"
-                android:text="1 On 1 Sessions"
+                android:text="Trò chuyện với bác sĩ"
                 android:textColor="@color/_1_on_1_sessions_color"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -147,24 +147,24 @@
             <TextView
                 android:id="@+id/let_s_open_up_to_the_things_that_matter_the_most"
                 android:layout_width="216dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginRight="100dp"
                 android:alpha="0.9"
-                android:text="Chưa có gì cả"
+                android:text="Bạn muốn tâm sự với bác sĩ?"
                 android:textColor="@color/_1_on_1_sessions_color"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/book_now"
-                android:layout_width="101dp"
+                android:layout_width="151dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="115dp"
                 android:layout_marginEnd="100dp"
                 android:layout_marginRight="200dp"
                 android:layout_marginBottom="100dp"
-                android:text="Book now"
+                android:text="Đặt lich ở đây nha"
                 android:textColor="@color/ellipse_5_color"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -173,7 +173,7 @@
                 android:id="@+id/vector_ek2"
                 android:layout_width="12.75dp"
                 android:layout_height="14.17dp"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="140dp"
                 android:layout_marginTop="120dp"
                 android:contentDescription="vector_ek2"
                 android:src="@drawable/vector_ek2" />
@@ -206,7 +206,7 @@
                     android:layout_height="42dp"
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
-                    android:text="Cái gì đó"
+                    android:text="Chatbot"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -226,11 +226,11 @@
                     android:src="@drawable/vector_ek8" />
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="42dp"
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
-                    android:text="Cái gì đó"
+                    android:text="Thông tin"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -263,9 +263,9 @@
                 android:layout_height="90dp"
                 android:gravity="center"
                 android:paddingLeft="5dp"
-                android:text="Có làm mới có ăn"
+                android:text="@string/caunoi"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -282,7 +282,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30.53dp"
                 android:paddingLeft="20dp"
-                android:text="Binh"
+                android:text="Hôm nay cậu như thế nào?"
                 android:textColor="@color/welcome_back__sarina__color"
                 android:textSize="20sp" />
 
