@@ -68,10 +68,10 @@ public class FindTopicsViewpapers extends RecyclerView.Adapter<FindTopicsViewpap
         void setBind(Find matchCourse) {
 
             binding.tvTitulo.setText(matchCourse.getName());
-            binding.tvCantidadCursos.setText(matchCourse.getNumberOfCourses());
             Glide.with(itemView.getContext())
                     .load(matchCourse.getImageResource())
                     .transform(new CenterCrop())
+                    .override(1000,1000)
                     .into(binding.image);
         }
 

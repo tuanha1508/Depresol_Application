@@ -21,10 +21,8 @@
         android:layout_height="match_parent"
 
         android:adjustViewBounds="true"
-
-
         android:scaleType="fitCenter"
-        android:src="@drawable/pic1"
+        android:src="@drawable/violence2"
         tools:ignore="ContentDescription"
         android:background="@color/nav_bar_color" />
 
@@ -32,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -44,17 +42,8 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/design_thinking"
             android:fontFamily="@font/firasan_medium"
+            android:layout_marginTop="-5dp"
             android:textColor="@color/contentTextColor" />
 
-        <TextView
-            android:id="@+id/tv_cantidad_cursos"
-            android:fontFamily="@font/firasan_medium"
-            android:layout_marginTop="2dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/_20_videos"
-            android:textColor="@color/contentTextColor"
-            android:textSize="13sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

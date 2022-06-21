@@ -36,7 +36,7 @@
             android:adjustViewBounds="true"
 
             android:background="@color/nav_bar_color"
-            android:src="@drawable/pic1"
+            android:src="@drawable/violence2"
             android:contentDescription="@string/app_name"
 
             />
@@ -62,21 +62,5 @@
         tools:layout_conversion_absoluteHeight="16dp"
         tools:layout_conversion_absoluteWidth="94dp" />
 
-    <TextView
-        android:id="@+id/tv_cantidad_cursos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/firasan_medium"
-        android:text="20 videos"
-        android:textColor="@color/contentTextColor"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
-        tools:layout_conversion_absoluteHeight="15dp"
-        tools:layout_conversion_absoluteWidth="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
