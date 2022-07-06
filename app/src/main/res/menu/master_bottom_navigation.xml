@@ -18,13 +18,14 @@
         android:title="Favorites"
         app:cnb_iconColor="@color/favorites" />
     <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
-        android:title="Settings"
-        app:cnb_iconColor="@color/settings" />
-    <item
         android:id="@+id/yourbotFragment"
         android:icon="@drawable/ic_bot"
         android:title="Your Bot"
         app:cnb_iconColor="@color/find"/>
+    <item
+        android:id="@+id/testDep"
+        android:icon="@drawable/test"
+        android:title="Test Dep"
+        app:cnb_iconColor="@color/home" />
+
 </menu>
