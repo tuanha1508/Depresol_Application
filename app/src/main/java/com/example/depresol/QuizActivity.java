@@ -21,7 +21,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView tvQuestions, tvAnswer, tvQuestionNo;
     private RadioGroup radioGroup;
-    private RadioButton rb1, rb2, rb3;
+    private RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
     private Button btnNext;
 
     String[] ans = new String[10];
@@ -47,6 +47,9 @@ public class QuizActivity extends AppCompatActivity {
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
+        rb4 = findViewById(R.id.rb4);
+        rb5 = findViewById(R.id.rb5);
+        rb6 = findViewById(R.id.rb6);
         btnNext = findViewById(R.id.btnNext);
         dfRbcolor = rb1.getTextColors();
         addQuestions();
@@ -86,6 +89,15 @@ public class QuizActivity extends AppCompatActivity {
             if(rb3.isChecked()) {
                 ans[cnt] = currentQuestion.getOption3();
             }
+            if(rb4.isChecked()) {
+                ans[cnt] = currentQuestion.getOption4();
+            }
+            if(rb5.isChecked()) {
+                ans[cnt] = currentQuestion.getOption5();
+            }
+            if(rb6.isChecked()) {
+                ans[cnt] = currentQuestion.getOption6();
+            }
         }
         if(qcounter < totalQuestion) {
             btnNext.setText("Câu tiếp theo");
@@ -101,12 +113,18 @@ public class QuizActivity extends AppCompatActivity {
         rb1.setTextColor(dfRbcolor);
         rb2.setTextColor(dfRbcolor);
         rb3.setTextColor(dfRbcolor);
+        rb4.setTextColor(dfRbcolor);
+        rb5.setTextColor(dfRbcolor);
+        rb6.setTextColor(dfRbcolor);
         if(qcounter < totalQuestion) {
             currentQuestion = questionList.get(qcounter);
             tvQuestions.setText(currentQuestion.getQuestion());
             rb1.setText(currentQuestion.getOption1());
             rb2.setText(currentQuestion.getOption2());
             rb3.setText(currentQuestion.getOption3());
+            rb4.setText(currentQuestion.getOption4());
+            rb5.setText(currentQuestion.getOption5());
+            rb6.setText(currentQuestion.getOption6());
             qcounter++;
             btnNext.setText("Câu tiếp theo");
             tvQuestionNo.setText("Question : " + qcounter + "/" + totalQuestion);
@@ -118,7 +136,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questionList.add(new QuizModel("Híu có gay không ? ", "Có", "Yes" , "Tất cả câu trên", 3));
+        questionList.add(new QuizModel("Híu có gay không ? ", "Có", "Yes" , "Tất cả câu trên", "có", "có", "có", 3));
 
     }
 }
