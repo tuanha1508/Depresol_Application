@@ -24,6 +24,12 @@
         tools:layout="@layout/activity_chat"
         />
     <fragment
+        android:id="@+id/testDep"
+        android:name="com.example.depresol.Quiz"
+        android:label="testDep"
+        tools:layout="@layout/activity_quiz"
+        />
+    <fragment
         android:id="@+id/settings"
         android:name="com.example.depresol.Activity_settings"
         android:label="settings"
