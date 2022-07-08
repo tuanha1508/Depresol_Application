@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity"
-    android:background="@color/grey_light">
+    android:background="#f6f7eb">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,65 +17,120 @@
 
         <TextView
             android:id="@+id/textQuestionNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_chat"
             android:fontFamily="@font/firasans_medium"
             android:text="Câu hỏi : 1 / n"
+            android:gravity="center_vertical|center_horizontal"
             android:textColor="@color/Black"
-            android:textSize="17sp" />
-        
+            android:layout_marginTop="7dp"/>
+
         <TextView
             android:id="@+id/textQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Câu hỏi sẽ ở đây..."
             android:layout_above="@+id/radioGroup"
-            android:layout_marginBottom="10dp"
-            android:textSize="20sp"
+            android:layout_marginBottom="58dp"
+            android:background="@drawable/question_background"
+            android:fontFamily="@font/firasans_medium"
+            android:text="Câu hỏi sẽ ở đây..."
+            android:textAlignment="center"
             android:textColor="@color/Black"
-            android:textAlignment="center"/>
+            android:textStyle="italic" />
+
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/rb1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Option 1 :"
-                android:textSize="20sp"
-                android:fontFamily="@font/firasans_light"
-                android:textStyle="italic"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 1"
+                android:background="@drawable/rect_background2"
+                android:fontFamily="@font/firasans_medium"/>
+
             <RadioButton
                 android:id="@+id/rb2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Option 2 :"
-                android:textSize="20sp"
-                android:fontFamily="@font/firasans_light"
-                android:textStyle="italic"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 2"
+                android:background="@drawable/rect_background"
+                android:fontFamily="@font/firasans_medium"/>
+
             <RadioButton
                 android:id="@+id/rb3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Option 3 :"
-                android:textSize="20sp"
-                android:fontFamily="@font/firasans_light"
-                android:textStyle="italic"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 3"
+                android:background="@drawable/rect_background2"
+                android:fontFamily="@font/firasans_medium"/>
+
+            <RadioButton
+                android:id="@+id/rb4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 4"
+                android:background="@drawable/rect_background"
+                android:fontFamily="@font/firasans_medium"/>
+
+            <RadioButton
+                android:id="@+id/rb5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 5"
+                android:background="@drawable/rect_background2"
+                android:fontFamily="@font/firasans_medium"/>
+
+            <RadioButton
+                android:id="@+id/rb6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|bottom"
+                android:text="Option 6"
+                android:background="@drawable/rect_background"
+                android:fontFamily="@font/firasans_medium"/>
+
 
         </RadioGroup>
+
         <Button
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/radioGroup"
-            android:layout_marginTop="20dp"
-            android:text="Câu tiếp theo"
+            android:layout_marginTop="94dp"
             android:fontFamily="@font/firasans_medium"
+            android:text="Câu tiếp theo"
             android:textStyle="italic"
-            />
+            android:background="#ffd4ca"/>
 
 
     </RelativeLayout>
