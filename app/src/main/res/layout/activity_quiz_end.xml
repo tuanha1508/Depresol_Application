@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizEnd"
+    android:background="@color/grey_light">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Mức độ trầm cảm hiện tại của bạn :"
+            android:textSize="20sp"
+            android:paddingTop="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="#02020a"
+            android:background="@drawable/result_background" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Result"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="20sp"
+            android:textColor="#02020a" />
+
+
+        <ImageView
+            android:id="@+id/img_result"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/anxiety_logo" />
+
+
+        <TextView
+            android:id="@+id/chitiet"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/background_round"
+            android:fontFamily="@font/firasans_italic"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Chi tiết về phân tích..."
+            android:textColor="#bfacaa"
+            android:textSize="28sp"
+            android:textStyle="italic" />
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
