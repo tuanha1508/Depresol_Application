@@ -11,21 +11,19 @@
         android:icon="@drawable/ic_find"
         android:title="Activity"
         app:cnb_iconColor="@color/find"/>
-
     <item
-        android:id="@+id/favorites"
-        android:icon="@drawable/ic_love"
-        android:title="Settings"
-        app:cnb_iconColor="@color/favorites" />
+        android:id="@+id/testDep"
+        android:icon="@drawable/test"
+        android:title="Test Dep"
+        app:cnb_iconColor="@color/home" />
     <item
         android:id="@+id/yourbotFragment"
         android:icon="@drawable/ic_bot"
         android:title="Your Bot"
         app:cnb_iconColor="@color/find"/>
     <item
-        android:id="@+id/testDep"
-        android:icon="@drawable/test"
-        android:title="Test Dep"
-        app:cnb_iconColor="@color/home" />
-
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:cnb_iconColor="@color/settings" />
 </menu>

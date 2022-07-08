@@ -29,13 +29,15 @@
         <TextView
             android:id="@+id/textQuestion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_above="@+id/radioGroup"
             android:layout_marginBottom="58dp"
             android:background="@drawable/question_background"
             android:fontFamily="@font/firasans_medium"
             android:text="Câu hỏi sẽ ở đây..."
+            android:textSize="20sp"
             android:textAlignment="center"
+            android:gravity="center_vertical|center_horizontal"
             android:textColor="@color/Black"
             android:textStyle="italic" />
 
@@ -43,57 +45,43 @@
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal">
+            android:layout_centerInParent="true">
 
             <RadioButton
                 android:id="@+id/rb1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/rect_background2"
-                android:fontFamily="@font/firasans_medium"/>
+                android:fontFamily="@font/firasans_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Option 1" />
 
             <RadioButton
                 android:id="@+id/rb2"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 2"
                 android:background="@drawable/rect_background"
-                android:fontFamily="@font/firasans_medium"/>
+                android:fontFamily="@font/firasans_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Option 2" />
 
             <RadioButton
                 android:id="@+id/rb3"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 3"
                 android:background="@drawable/rect_background2"
-                android:fontFamily="@font/firasans_medium"/>
+                android:fontFamily="@font/firasans_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Option 3" />
 
             <RadioButton
                 android:id="@+id/rb4"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 4"
                 android:background="@drawable/rect_background"
-                android:fontFamily="@font/firasans_medium"/>
-
+                android:fontFamily="@font/firasans_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Option 4" />
 
         </RadioGroup>
 
