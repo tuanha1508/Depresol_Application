@@ -50,23 +50,20 @@
 
             <ImageView
                 style="@style/viewParent"
-                android:src="@drawable/ic_more"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_more" />
 
         </RelativeLayout>
 
-        <Switch
-            android:id="@+id/darkModeSwitch"
-            style="@style/settingsText"
-            android:drawableLeft="@drawable/ic_dark_mode"
-            android:text="Dark Mode" />
+
 
         <TextView
             style="@style/viewParent.headerText.settingsMiniTitle"
             android:text="Profile"/>
 
         <TextView
+            android:id="@+id/thaydoithongtin"
             style="@style/viewParent.headerText.settingsTextIcon"
             android:drawableLeft="@drawable/ic_edit_profile"
             android:text="Thay đổi thông tin" />

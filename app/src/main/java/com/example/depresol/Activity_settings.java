@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class Activity_settings extends Fragment {
     FirebaseAuth mFirebaseAuth;
-    TextView log_out;
+    TextView log_out , change_data;
     File myInternalFile;
 
     @Override
@@ -35,7 +35,15 @@ public class Activity_settings extends Fragment {
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         log_out = view.findViewById(R.id.log_out);
+        change_data = view.findViewById(R.id.thaydoithongtin);
+        change_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Integer intent = new Intent(Activity_settings.this , ProfileActivity.class);
+                //startActivity(intent);
 
+            }
+        });
         log_out.setOnClickListener(v -> {
             mFirebaseAuth.signOut();
             try {

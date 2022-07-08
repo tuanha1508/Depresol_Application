@@ -263,7 +263,7 @@
                 android:layout_height="90dp"
                 android:gravity="center"
                 android:paddingLeft="5dp"
-                android:text="@string/caunoi"
+                android:text="Don’t cry because you did try your best"
                 android:textSize="20sp"
                 android:textStyle="italic" />
         </RelativeLayout>

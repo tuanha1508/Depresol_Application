@@ -94,30 +94,6 @@
                 android:background="@drawable/rect_background"
                 android:fontFamily="@font/firasans_medium"/>
 
-            <RadioButton
-                android:id="@+id/rb5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 5"
-                android:background="@drawable/rect_background2"
-                android:fontFamily="@font/firasans_medium"/>
-
-            <RadioButton
-                android:id="@+id/rb6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-                android:gravity="center_horizontal|bottom"
-                android:text="Option 6"
-                android:background="@drawable/rect_background"
-                android:fontFamily="@font/firasans_medium"/>
-
 
         </RadioGroup>
 

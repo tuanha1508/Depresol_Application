@@ -99,7 +99,7 @@ public class MainActivity_Menu extends AppCompatActivity
         if(name_user != null){
             loi_chao.setText(tmp + name_user );
         } else {
-            loi_chao.setText(tmp + "Cậu");
+            loi_chao.setText(tmp + "Minh Hiếu");
         }
 
         if(url_avatar != null ){

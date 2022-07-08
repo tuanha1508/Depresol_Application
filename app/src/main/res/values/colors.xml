@@ -230,4 +230,11 @@
     <!--colors for light mode-->
     <color name="imageBorderColor">#E01E7A</color>
     <color name="miniTitle">#2A2E43</color>
+
+    <!--colors for profile-->
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
 </resources>

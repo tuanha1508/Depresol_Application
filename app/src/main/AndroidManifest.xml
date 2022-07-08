@@ -24,7 +24,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".QuizActivity"
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"
+            android:theme="@style/AppTheme.ProfileTheme"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".QuizActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity_Nofications"
