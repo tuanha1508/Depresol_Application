@@ -112,6 +112,18 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showNextQuestion() {
+        if(rb1.isChecked()) {
+            result += 0;
+        }
+        if(rb2.isChecked()) {
+            result += 1;
+        }
+        if(rb3.isChecked()) {
+            result += 2;
+        }
+        if(rb4.isChecked()) {
+            result += 3;
+        }
         radioGroup.clearCheck();
         rb1.setTextColor(dfRbcolor);
         rb2.setTextColor(dfRbcolor);
