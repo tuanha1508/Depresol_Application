@@ -50,10 +50,10 @@
             android:layout_height="37dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="77dp"
             android:lineSpacingExtra="-3sp"
-            android:text="Tuan"
+            android:text="Ricardo"
             android:textColor="@color/welcome_back__sarina__color"
             android:textSize="15sp" />
     </RelativeLayout>
