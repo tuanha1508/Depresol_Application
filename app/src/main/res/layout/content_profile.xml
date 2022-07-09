@@ -18,7 +18,7 @@
 
             <TextView
                 style="@style/headerText"
-                android:text="Account Info"
+                android:text="Thông tin tài khoản"
                 android:layout_marginBottom="20dp"/>
 
             <RelativeLayout style="@style/profileDetailsLayout">
@@ -62,10 +62,20 @@
                     android:layout_toRightOf="@id/mobileImageView"
                     style="@style/profileDetailsTextMain"/>
 
-                <TextView
-                    style="@style/profileDetailsMiniText"
-                    android:layout_toRightOf="@id/mobileImageView"
-                    android:text="+91-8129999999" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editSDT_profile"
+                    style="@style/parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/edtDT_profile"
+                        style="@style/modifiedEditText"
+                        android:hint="Số điện thoại"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 
@@ -97,24 +107,7 @@
 
             </RelativeLayout>
 
-            <View style="@style/proifleDetailsView" />
-            <RelativeLayout style="@style/profileDetailsLayout">
-                <ImageView
-                    android:id="@+id/addressImageView"
-                    android:src="@drawable/ic_address"
-                    style="@style/profileDetailsImage" />
 
-                <TextView
-                    android:text="Address"
-                    android:layout_toRightOf="@id/addressImageView"
-                    style="@style/profileDetailsTextMain" />
-
-                <TextView
-                    android:text="Avenue 2nd Street NW SY."
-                    android:layout_toRightOf="@id/addressImageView"
-                    style="@style/profileDetailsMiniText" />
-
-            </RelativeLayout>
 
             <View style="@style/proifleDetailsView" />
             <RelativeLayout style="@style/profileDetailsLayout">
@@ -139,7 +132,7 @@
 
             </RelativeLayout>
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-                android:id="@+id/cirLoginButton"
+                android:id="@+id/thaydoiProfile"
                 style="@style/xnButton"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"

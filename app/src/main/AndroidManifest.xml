@@ -25,13 +25,16 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".change_password"
+            android:exported="false" />
+        <activity
             android:name=".QuizEnd"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true"
             android:label="Profile"
-            android:theme="@style/AppTheme.ProfileTheme"></activity>
+            android:theme="@style/AppTheme.ProfileTheme" />
         <activity
             android:name=".QuizActivity"
             android:exported="true" />
