@@ -85,7 +85,7 @@ public class MainActivity extends Fragment {
 
             @Override
             public void onFailure(Call<MsgModal> call, Throwable t) {
-                chatsmodalArrayList.add(new Chatsmodal("Bot đéo được lập trình cho tình huống này",BOT_KEY));
+                chatsmodalArrayList.add(new Chatsmodal("Bot chưa được thiết lập để trả lời cho câu trên",BOT_KEY));
                 chatAdapter.notifyDataSetChanged();
             }
         });
