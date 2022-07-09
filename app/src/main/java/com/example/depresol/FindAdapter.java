@@ -29,7 +29,6 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         ItemShopCardBinding itemCardBinding = ItemShopCardBinding.inflate(inflater,parent,false);
         return new FindAdapter.ViewHolder(itemCardBinding);

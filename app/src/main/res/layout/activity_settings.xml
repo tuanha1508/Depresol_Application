@@ -89,9 +89,15 @@
             android:text="Regional"/>
 
         <TextView
+            android:id="@+id/tmp"
             style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/ic_languages"
-            android:text="Language" />
+            android:text="Mật mã"
+            android:drawableLeft="@drawable/ic_edit_password"
+            >
+        </TextView>
+
+
+
 
         <TextView
             android:id="@+id/log_out"

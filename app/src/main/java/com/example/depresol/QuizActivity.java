@@ -3,6 +3,7 @@ package com.example.depresol;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class QuizActivity extends AppCompatActivity {
     int cnt = 0;
     int totalQuestion;
     int qcounter = 0;
+    int result = 0;
 
     ColorStateList dfRbcolor;
     boolean answered;
@@ -58,8 +60,9 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!answered) {
-                    if(rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
+                    if(rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()) {
                         checkAnswer();
+                        showNextQuestion();
                     }
                     else {
                         Toast.makeText(QuizActivity.this, "Vui lòng quyết định lựa chọn của bạn", Toast.LENGTH_SHORT).show();
@@ -81,15 +84,19 @@ public class QuizActivity extends AppCompatActivity {
             cnt++;
             if(rb1.isChecked()) {
                 ans[cnt] = currentQuestion.getOption0();
+                result += 0;
             }
             if(rb2.isChecked()) {
                 ans[cnt] = currentQuestion.getOption1();
+                result += 1;
             }
             if(rb3.isChecked()) {
                 ans[cnt] = currentQuestion.getOption2();
+                result += 2;
             }
             if(rb4.isChecked()) {
                 ans[cnt] = currentQuestion.getOption3();
+                result += 3;
             }
         }
         if(qcounter < totalQuestion) {
@@ -98,6 +105,9 @@ public class QuizActivity extends AppCompatActivity {
         }
         else {
             btnNext.setText("Hoàn thành bài test :>");
+            Intent intent = new Intent(QuizActivity.this , QuizEnd.class);
+            intent.putExtra("score", result);
+            startActivity(intent);
         }
     }
 

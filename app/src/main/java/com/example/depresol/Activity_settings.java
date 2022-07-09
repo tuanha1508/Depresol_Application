@@ -39,8 +39,8 @@ public class Activity_settings extends Fragment {
         change_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Integer intent = new Intent(Activity_settings.this , ProfileActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                startActivity(intent);
 
             }
         });
