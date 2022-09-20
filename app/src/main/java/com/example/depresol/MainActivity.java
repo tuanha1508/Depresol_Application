@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class MainActivity extends Fragment {
 
     RecyclerView recyclerView;
     EditText editText;
-    ImageView imageView;
+    ImageView imageView , back;
     ArrayList<Chatsmodal> chatsmodalArrayList;
     ChatAdapter chatAdapter;
     private final String USER_KEY = "user";
@@ -41,12 +42,20 @@ public class MainActivity extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.chat_recycler);
         editText = (EditText) view.findViewById(R.id.edt_msg);
         imageView = (ImageView) view.findViewById(R.id.send_btn);
+        back = view.findViewById(R.id.ic_back);
         chatsmodalArrayList = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatsmodalArrayList,getActivity());
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(chatAdapter);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this.getContext(),MainActivity_Menu.class);
+                startActivity(intent);
+            }
+        });
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
