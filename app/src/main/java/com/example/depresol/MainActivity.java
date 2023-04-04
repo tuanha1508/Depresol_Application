@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -32,7 +36,12 @@ public class MainActivity extends Fragment {
     ChatAdapter chatAdapter;
     private final String USER_KEY = "user";
     private final String BOT_KEY = "bot";
+
+    Python py;
+    PyObject pyboj , obj;
+
     public View onCreateView(LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState) {
+        run_python();
         try{
             super.onCreate(savedInstanceState);
         }catch (Exception ex){
@@ -49,6 +58,7 @@ public class MainActivity extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(chatAdapter);
+        //run_python();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,34 +79,18 @@ public class MainActivity extends Fragment {
         });
         return view;
     }
+    void run_python(){
+        if(!Python.isStarted()) Python.start(new AndroidPlatform(MainActivity.this.getContext()));
+        py = Python.getInstance();
+        pyboj = py.getModule("chatgpt");
+    }
     private void getResponse(String message) {
         chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg="+message;
-        //String url = "http://api.brainshop.ai/get?bid=166699&key=7BNL3cP7oGQUB9gJ&uid=[uid]&msg" + message;
-        String BASE_URL = "http://api.brainshop.ai/";
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        RetroFitApi retroFitApi = retrofit.create(RetroFitApi.class);
-        Call<MsgModal> call = retroFitApi.getMessage(url);
-        call.enqueue(new Callback<MsgModal>() {
-            @Override
-            public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
-                if(response.isSuccessful()) {
-                    MsgModal msgModal = response.body();
-                    chatsmodalArrayList.add(new Chatsmodal(msgModal.getCnt(),BOT_KEY));
-                    chatAdapter.notifyDataSetChanged();
-                    recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MsgModal> call, Throwable t) {
-                chatsmodalArrayList.add(new Chatsmodal("Bot chưa được thiết lập để trả lời cho câu trên",BOT_KEY));
-                chatAdapter.notifyDataSetChanged();
-            }
-        });
+        obj = pyboj.callAttr("main",message);
+        chatsmodalArrayList.add(new Chatsmodal(obj.toString(),BOT_KEY));
+        chatAdapter.notifyDataSetChanged();
+        recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
+        chatAdapter.notifyDataSetChanged();
     }
 }

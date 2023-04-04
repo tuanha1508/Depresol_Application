@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "698481276054",
-    "firebase_url": "https://depresol-1fc0c-default-rtdb.firebaseio.com",
-    "project_id": "depresol-1fc0c",
-    "storage_bucket": "depresol-1fc0c.appspot.com"
+    "project_number": "779830995465",
+    "firebase_url": "https://depresol-d7059-default-rtdb.firebaseio.com",
+    "project_id": "depresol-d7059",
+    "storage_bucket": "depresol-d7059.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:698481276054:android:d31126b0ad7be7c2c37eb7",
+        "mobilesdk_app_id": "1:779830995465:android:8560e9b09cc310a12126d8",
         "android_client_info": {
           "package_name": "com.example.depresol"
         }
       },
       "oauth_client": [
         {
-          "client_id": "698481276054-lvanlhbus4242jjqool155g35ooutbp9.apps.googleusercontent.com",
+          "client_id": "779830995465-fon8d9al087b01m7ses4qeg3e2erd4da.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBPt_xZC-SCay1qTos6p1gMaffg-O5DS1k"
+          "current_key": "AIzaSyD_GWPB2g1K4u-NAr08kruwPtLF_9u3Wts"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "698481276054-lvanlhbus4242jjqool155g35ooutbp9.apps.googleusercontent.com",
+              "client_id": "779830995465-fon8d9al087b01m7ses4qeg3e2erd4da.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
