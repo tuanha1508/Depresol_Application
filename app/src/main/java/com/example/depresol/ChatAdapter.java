@@ -32,6 +32,9 @@ public class ChatAdapter extends RecyclerView.Adapter {
             case 1 :
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_reply,parent,false);
                 return new botViewHolder(view);
+            case 2:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_waiting_respone,parent,false);
+                return new botViewWaiting(view);
         }
         return null;
     }
@@ -62,6 +65,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
                 return 0;
             case "bot" :
                 return 1;
+            case "waiting":
+                return 2;
             default:return -1;
         }
     }
@@ -81,6 +86,14 @@ public class ChatAdapter extends RecyclerView.Adapter {
         public botViewHolder(@NonNull View itemView) {
             super(itemView);
             botReply = itemView.findViewById(R.id.bot_reply);
+
+        }
+    }
+    public static class botViewWaiting extends RecyclerView.ViewHolder {
+        TextView botReply;
+        public botViewWaiting(@NonNull View itemView) {
+            super(itemView);
+            //botReply = itemView.findViewById(R.id.bot);
 
         }
     }

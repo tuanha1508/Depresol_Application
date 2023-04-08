@@ -20,6 +20,7 @@ import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,6 +37,7 @@ public class MainActivity extends Fragment {
     ChatAdapter chatAdapter;
     private final String USER_KEY = "user";
     private final String BOT_KEY = "bot";
+    private final String BOT_WAITING = "waiting";
 
     Python py;
     PyObject pyboj , obj;
@@ -73,8 +75,9 @@ public class MainActivity extends Fragment {
                     Toast.makeText(getActivity().getApplicationContext(),"Please enter your message",Toast.LENGTH_SHORT).show();
                     return;
                 }
+                chatsmodalArrayList.add(new Chatsmodal(editText.getText().toString(),USER_KEY));
+                chatAdapter.notifyDataSetChanged();
                 getResponse(editText.getText().toString());
-                editText.setText("");
             }
         });
         return view;
@@ -85,12 +88,32 @@ public class MainActivity extends Fragment {
         pyboj = py.getModule("chatgpt");
     }
     private void getResponse(String message) {
-        chatsmodalArrayList.add(new Chatsmodal(message,USER_KEY));
+        editText.setText("");
+        chatsmodalArrayList.add(new Chatsmodal(message,BOT_WAITING));
         chatAdapter.notifyDataSetChanged();
-        obj = pyboj.callAttr("main",message);
-        chatsmodalArrayList.add(new Chatsmodal(obj.toString(),BOT_KEY));
-        chatAdapter.notifyDataSetChanged();
-        recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
-        chatAdapter.notifyDataSetChanged();
+
+
+//        obj = pyboj.callAttr("main",message);
+//        List<String> data = process_respone(obj.toString());
+//
+//        chatsmodalArrayList.remove(chatsmodalArrayList.size() - 1);
+//        chatAdapter.notifyDataSetChanged();
+//
+//        chatsmodalArrayList.add(new Chatsmodal(obj.toString(),BOT_KEY));
+//        chatAdapter.notifyDataSetChanged();
+//        recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
+//        chatAdapter.notifyDataSetChanged();
+
+    }
+    private List<String> process_respone(String message){
+        List<String> data = new ArrayList<String>();
+        int last = message.indexOf('.') , begin = 0;
+        while(last!=-1){
+            String tmp = message.substring(begin , last);
+            data.add(tmp);
+            begin = last;
+            last = message.indexOf('.' , last+1);
+        }
+        return data;
     }
 }

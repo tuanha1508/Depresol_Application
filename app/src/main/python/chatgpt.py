@@ -1,7 +1,6 @@
 import openai
 from typing import List
-
-openai.api_key = "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"
+openai.api_key = "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"
 
 def get_api_response(prompt: str) -> str :
     text = None
@@ -11,7 +10,7 @@ def get_api_response(prompt: str) -> str :
             model='text-davinci-003',
             prompt=prompt,
             temperature=0.9,
-            max_tokens=150,
+            max_tokens=1000,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0.6,
@@ -46,11 +45,25 @@ def get_bot_response(message: str, pl: list[str]) -> str:
         update_list(bot_response, pl)
         pos: int = bot_response.find('\nAI: ')
         bot_response = bot_response[pos + 5:]
+        print(bot_response)
     else:
         bot_response = 'Something went wrong...'
 
     return bot_response
 
+def fixed(s):
+    s = list(s)
+    sz = 30
+    last = 0
+    for i in range(len(s)):
+        if i - last > sz:
+            j = i
+            while s[j] != ' ': j -= 1
+            s[j] = '\n'
+            last = j
+    t = ""
+    for i in s: t += i
+    return t
 
 def main(message) -> str:
     prompt_list: list[str] = ['Bạn nói tiếng việt và chỉ trả lời bằng tiếng việt',
@@ -59,7 +72,8 @@ def main(message) -> str:
 
     user_input: str = message
     response: str = get_bot_response(user_input, prompt_list)
-    return (f'Bot: {response}')
+    respense = fixed(response)
+    return (fixed(f' {response}'))
         
 
 
