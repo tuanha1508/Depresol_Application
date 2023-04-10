@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.ThemedSpinnerAdapter;
 import android.widget.Toast;
 
 import com.chaquo.python.PyObject;
@@ -29,6 +33,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Fragment {
+
 
     RecyclerView recyclerView;
     EditText editText;
@@ -50,6 +55,7 @@ public class MainActivity extends Fragment {
             Log.e("error" , ex.toString());
         }
         View view = inflater.inflate(R.layout.activity_chat , container , false);
+
         recyclerView = (RecyclerView) view.findViewById(R.id.chat_recycler);
         editText = (EditText) view.findViewById(R.id.edt_msg);
         imageView = (ImageView) view.findViewById(R.id.send_btn);
@@ -77,32 +83,32 @@ public class MainActivity extends Fragment {
                 }
                 chatsmodalArrayList.add(new Chatsmodal(editText.getText().toString(),USER_KEY));
                 chatAdapter.notifyDataSetChanged();
+
                 getResponse(editText.getText().toString());
             }
         });
         return view;
     }
     void run_python(){
-        if(!Python.isStarted()) Python.start(new AndroidPlatform(MainActivity.this.getContext()));
-        py = Python.getInstance();
-        pyboj = py.getModule("chatgpt");
     }
     private void getResponse(String message) {
         editText.setText("");
+        chatgpt chatgpt = new chatgpt();
         chatsmodalArrayList.add(new Chatsmodal(message,BOT_WAITING));
         chatAdapter.notifyDataSetChanged();
+        String bot_rep = chatgpt.run(message);
+        try {
+            Thread.sleep(5000);
+        }catch (Exception e){
 
+        }
+        chatsmodalArrayList.remove(chatsmodalArrayList.size() - 1);
+        chatAdapter.notifyDataSetChanged();
 
-//        obj = pyboj.callAttr("main",message);
-//        List<String> data = process_respone(obj.toString());
-//
-//        chatsmodalArrayList.remove(chatsmodalArrayList.size() - 1);
-//        chatAdapter.notifyDataSetChanged();
-//
-//        chatsmodalArrayList.add(new Chatsmodal(obj.toString(),BOT_KEY));
-//        chatAdapter.notifyDataSetChanged();
-//        recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
-//        chatAdapter.notifyDataSetChanged();
+        chatsmodalArrayList.add(new Chatsmodal(bot_rep, BOT_KEY));
+        chatAdapter.notifyDataSetChanged();
+        recyclerView.scrollToPosition(chatsmodalArrayList.size() - 1);
+        chatAdapter.notifyDataSetChanged();
 
     }
     private List<String> process_respone(String message){

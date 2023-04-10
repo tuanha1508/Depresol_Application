@@ -1,6 +1,6 @@
 import openai
 from typing import List
-openai.api_key = "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"
+openai.api_key = "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"
 
 def get_api_response(prompt: str) -> str :
     text = None
