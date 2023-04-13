@@ -118,4 +118,19 @@
         android:contentDescription="TODO"
         tools:ignore="ContentDescription" />
 
+    <ImageView
+        android:id="@+id/send_analysic"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="56dp"
+        android:clickable="true"
+
+        android:contentDescription="TODO"
+        android:src="@drawable/magnifying_glass"
+        app:layout_constraintBottom_toBottomOf="@+id/send_btn"
+        app:layout_constraintStart_toEndOf="@+id/send_btn"
+        app:layout_constraintTop_toTopOf="@+id/send_btn"
+        tools:ignore="ContentDescription" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

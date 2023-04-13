@@ -25,6 +25,9 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Result_analysis"
+            android:exported="true" />
+        <activity
             android:name=".change_password"
             android:exported="false" />
         <activity

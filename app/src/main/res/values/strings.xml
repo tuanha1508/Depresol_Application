@@ -11,4 +11,6 @@
     <string name="_20_videos">20 videos</string>
     <string name="title_topic_find">Design Thinking</string>
     <string name="number_videos">20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
